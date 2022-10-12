@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                     FirebaseAuth.instance.signOut();
                   },
                   color: clrs[0],
-                  child: Text('Sign the fuck out'),
+                  child: Text('Sign out'),
                 )
               ],
             ),
