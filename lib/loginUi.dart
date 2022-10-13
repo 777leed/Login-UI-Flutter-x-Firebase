@@ -2,8 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:project_tsdrt/signupUi.dart';
 
 class loginUi extends StatefulWidget {
+  final VoidCallback showsignupPage;
+  const loginUi({super.key, required this.showsignupPage});
+
   @override
   State<loginUi> createState() => _loginUiState();
 }
@@ -133,8 +137,12 @@ class _loginUiState extends State<loginUi> {
                   children: [
                     Text("Still not a member ?, ",
                         style: GoogleFonts.cairo(fontSize: 15)),
-                    Text("Be one now!!",
-                        style: GoogleFonts.cairo(fontSize: 15, color: clrs[0]))
+                    GestureDetector(
+                      onTap: widget.showsignupPage,
+                      child: Text("Be one now!!",
+                          style:
+                              GoogleFonts.cairo(fontSize: 15, color: clrs[0])),
+                    ),
                   ],
                 )
               ],
